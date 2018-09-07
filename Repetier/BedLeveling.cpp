@@ -438,12 +438,12 @@ bool runBedLeveling(int s) {
 
 #endif
 
+#if FEATURE_AUTOLEVEL
 /** \brief Activate or deactivate rotation correction.
 
 \param on True if Rotation correction should be enabled.
 */
 void Printer::setAutolevelActive(bool on) {
-#if FEATURE_AUTOLEVEL
     if(on == isAutolevelActive()) return;
     flag0 = (on ? flag0 | PRINTER_FLAG0_AUTOLEVEL_ACTIVE : flag0 & ~PRINTER_FLAG0_AUTOLEVEL_ACTIVE);
     if(on)
@@ -451,8 +451,8 @@ void Printer::setAutolevelActive(bool on) {
     else
         Com::printInfoFLN(Com::tAutolevelDisabled);
     updateCurrentPosition(false);
-#endif // FEATURE_AUTOLEVEL
 }
+#endif // FEATURE_AUTOLEVEL
 #if MAX_HARDWARE_ENDSTOP_Z
 /** \brief Measure distance from current position until triggering z max endstop.
 
