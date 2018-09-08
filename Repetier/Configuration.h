@@ -73,10 +73,10 @@
 #define DRIVE_SYSTEM 0
 #define XAXIS_STEPS_PER_MM 80
 #define YAXIS_STEPS_PER_MM 80
-#define ZAXIS_STEPS_PER_MM 400
+#define ZAXIS_STEPS_PER_MM 395
 #define EXTRUDER_FAN_COOL_TEMP 50
-#define PDM_FOR_EXTRUDER 0
-#define PDM_FOR_COOLER 0
+#define PDM_FOR_EXTRUDER 1
+#define PDM_FOR_COOLER 1
 #define DECOUPLING_TEST_MAX_HOLD_VARIANCE 20
 #define DECOUPLING_TEST_MIN_TEMP_RISE 1
 #define KILL_IF_SENSOR_DEFECT 1
@@ -104,8 +104,8 @@
 #define EXT0_MAX_FEEDRATE 50
 #define EXT0_MAX_START_FEEDRATE 20
 #define EXT0_MAX_ACCELERATION 5000
-#define EXT0_HEAT_MANAGER 1
-#define EXT0_PREHEAT_TEMP 190
+#define EXT0_HEAT_MANAGER 3
+#define EXT0_PREHEAT_TEMP 195
 #define EXT0_WATCHPERIOD 1
 #define EXT0_PID_INTEGRAL_DRIVE_MAX 255
 #define EXT0_PID_INTEGRAL_DRIVE_MIN 40
@@ -168,7 +168,7 @@
 #define GENERIC_THERM1_MIN_TEMP -20
 #define GENERIC_THERM1_MAX_TEMP 300
 #define GENERIC_THERM1_R1 0
-#define GENERIC_THERM1_R2 4700
+#define GENERIC_THERM1_R2 10000
 #define GENERIC_THERM_VREF 5
 #define GENERIC_THERM_NUM_ENTRIES 33
 #define HEATER_PWM_SPEED 0
@@ -178,7 +178,7 @@
 
 #define HAVE_HEATED_BED 1
 #define HEATED_BED_PREHEAT_TEMP 55
-#define HEATED_BED_MAX_TEMP 125
+#define HEATED_BED_MAX_TEMP 120
 #define SKIP_M190_IF_WITHIN 3
 #define HEATED_BED_SENSOR_TYPE 14
 #define HEATED_BED_SENSOR_PIN TEMP_1_PIN
@@ -193,9 +193,9 @@
 #define HEATED_BED_PID_MAX 255
 #define HEATED_BED_DECOUPLE_TEST_PERIOD 300000
 #define MIN_EXTRUDER_TEMP 150
-#define MAXTEMP 285
+#define MAXTEMP 275
 #define MIN_DEFECT_TEMPERATURE -10
-#define MAX_DEFECT_TEMPERATURE 295
+#define MAX_DEFECT_TEMPERATURE 290
 #define MILLISECONDS_PREHEAT_TIME 30000
 
 // ##########################################################################################
@@ -369,7 +369,7 @@ It also can add a delay to wait for spindle to run on full speed.
 // ##                           Movement settings                                          ##
 // ##########################################################################################
 
-#define FEATURE_BABYSTEPPING 0
+#define FEATURE_BABYSTEPPING 1
 #define BABYSTEP_MULTIPLICATOR 1
 
 #define DELTA_SEGMENTS_PER_SECOND_PRINT 180 // Move accurate setting for print moves
@@ -381,7 +381,7 @@ It also can add a delay to wait for spindle to run on full speed.
 
 #define DELTASEGMENTS_PER_PRINTLINE 24
 #define STEPPER_INACTIVE_TIME 360L
-#define MAX_INACTIVE_TIME 9000L
+#define MAX_INACTIVE_TIME 900L
 #define MAX_FEEDRATE_X 200
 #define MAX_FEEDRATE_Y 200
 #define MAX_FEEDRATE_Z 20
@@ -452,10 +452,10 @@ It also can add a delay to wait for spindle to run on full speed.
 // ################# Misc. settings ##################
 
 #define BAUDRATE 115200
-#define ENABLE_POWER_ON_STARTUP 0
+#define ENABLE_POWER_ON_STARTUP 1
 #define POWER_INVERTING 0
 #define AUTOMATIC_POWERUP 0
-#define KILL_METHOD 0
+#define KILL_METHOD 1
 #define ACK_WITH_LINENUMBER 1
 #define KEEP_ALIVE_INTERVAL 2000
 #define WAITING_IDENTIFIER "wait"
@@ -490,7 +490,7 @@ WARNING: Servos can draw a considerable amount of current. Make sure your system
 
 #define Z_PROBE_Z_OFFSET 0
 #define Z_PROBE_Z_OFFSET_MODE 0
-#define UI_BED_COATING 0
+#define UI_BED_COATING 1
 #define FEATURE_Z_PROBE 0
 #define EXTRUDER_IS_Z_PROBE 0
 #define Z_PROBE_DISABLE_HEATERS 0
@@ -544,7 +544,7 @@ WARNING: Servos can draw a considerable amount of current. Make sure your system
 #define SDCARDDETECT -1
 #define SDCARDDETECTINVERTED 0
 #endif
-#define SD_EXTENDED_DIR 0 /** Show extended directory including file length. Don't use this with Pronterface! */
+#define SD_EXTENDED_DIR 1 /** Show extended directory including file length. Don't use this with Pronterface! */
 #define SD_RUN_ON_STOP ""
 #define SD_STOP_HEATER_AND_MOTORS_ON_STOP 0
 #define ARC_SUPPORT 0
@@ -567,23 +567,23 @@ WARNING: Servos can draw a considerable amount of current. Make sure your system
 #define LANGUAGE_PL_ACTIVE 0
 #define LANGUAGE_TR_ACTIVE 0
 #define UI_PRINTER_NAME "DI3"
-#define UI_PRINTER_COMPANY ""
+#define UI_PRINTER_COMPANY "Wanhao"
 #define UI_PAGES_DURATION 4000
 #define UI_SPEEDDEPENDENT_POSITIONING 0
 #define UI_DISABLE_AUTO_PAGESWITCH 1
 #define UI_AUTORETURN_TO_MENU_AFTER 30000
 #define FEATURE_UI_KEYS 0
-#define UI_ENCODER_SPEED 1
-#define UI_REVERSE_ENCODER 1  //YMMV
-#define UI_KEY_BOUNCETIME 50
+#define UI_ENCODER_SPEED 2
+#define UI_REVERSE_ENCODER 0  //YMMV
+#define UI_KEY_BOUNCETIME 20
 #define UI_KEY_FIRST_REPEAT 500
 #define UI_KEY_REDUCE_REPEAT 50
 #define UI_KEY_MIN_REPEAT 50
-#define FEATURE_BEEPER 1
+#define FEATURE_BEEPER 0
 #define CASE_LIGHTS_PIN -1
 #define CASE_LIGHT_DEFAULT_ON 1
 #define UI_START_SCREEN_DELAY 1000
-#define UI_DYNAMIC_ENCODER_SPEED 0  //<--uses 60bytes :^) 
+#define UI_DYNAMIC_ENCODER_SPEED 1  //<--uses 60bytes :^) 
        
 	   /*
 Beeper sound definitions for short beeps during key actions
@@ -594,10 +594,10 @@ Values must be in range 1..255
 
 #define BEEPER_SHORT_SEQUENCE 2,2
 #define BEEPER_LONG_SEQUENCE 8,8
-#define UI_SET_MIN_HEATED_BED_TEMP  30
-#define UI_SET_MAX_HEATED_BED_TEMP 125
-#define UI_SET_MIN_EXTRUDER_TEMP   150
-#define UI_SET_MAX_EXTRUDER_TEMP   285
+#define UI_SET_MIN_HEATED_BED_TEMP  55
+#define UI_SET_MAX_HEATED_BED_TEMP 120
+#define UI_SET_MIN_EXTRUDER_TEMP   170
+#define UI_SET_MAX_EXTRUDER_TEMP   260
 #define UI_SET_EXTRUDER_FEEDRATE 2
 #define UI_SET_EXTRUDER_RETRACT_DISTANCE 3
 
